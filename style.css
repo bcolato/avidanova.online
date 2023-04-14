@@ -1,0 +1,271 @@
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot);
+  src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff2) format("woff2"), url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff) format("woff"), url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.ttf) format("truetype"), url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.svg#fontawesome) format("svg")
+}
+
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400
+}
+
+#comentarios_face {
+  font-family: Arial;
+  background-color: #F6F7F9;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.titulo_comentario {
+  font-weight: bold;
+  border-bottom: 1px solid #E9EBEE;
+  display: block;
+  padding-bottom: 6px;
+}
+
+.perfil {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+.perfil .nome {
+  color: #365899;
+  font-weight: bold;
+}
+
+.nome img {
+  float: left;
+  padding-right: 10px;
+}
+
+.perfil img {
+  width: 60px !important;
+  height: 50px;
+}
+
+.perfil p {
+  margin: 0;
+  margin-left: 60px;
+  margin-bottom: 0px;
+}
+
+.infos {
+  font-size: 11px;
+  color: #90949c;
+}
+
+.perfil2 {
+  padding-left: 9px;
+  border-left: 1px solid #E9EBEE;
+  margin-left: 50px;
+  padding-bottom: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("sua-imagem-de-fundo.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+header {
+  width: 100vw;
+  height: 70px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+
+header h1 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+header h1:last-child {
+  color: yellow;
+}
+
+#headline {
+  margin: 20px 0;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 0;
+}
+
+footer a {
+  color: #333;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.video-container {
+  width: 80%;
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-button {
+  margin-bottom: 25px;
+  padding: 15px 50px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.button-by-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.delay {
+  display: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contador {
+  margin: 10px 0;
+}
+
+.question {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.question h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.answer {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .question h2 {
+    font-size: 20px;
+  }
+
+  .answer {
+    font-size: 16px;
+  }
+
+  .elementor-widget-container {
+    padding: 20px;
+  }
+
+  .elementor-widget-container p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 15px 22px;
+    width: 80%;
+  }
+
+  #headline {
+    width: 300px;
+  }
+
+  .contador {
+    font-size: 13px;
+  }
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
