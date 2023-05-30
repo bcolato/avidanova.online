@@ -480,6 +480,10 @@ header div div span {
   height: 28px;
   border-radius: 7px;
   border: none;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons-container a:first-of-type {
