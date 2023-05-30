@@ -471,7 +471,7 @@ header div div span {
   gap: .5rem;
 }
 
-.buttons-container button {
+.buttons-container a {
   cursor: pointer;
   color: #FFFFFF;
   font-size: 8px;
@@ -482,11 +482,11 @@ header div div span {
   border: none;
 }
 
-.buttons-container button:first-of-type {
+.buttons-container a:first-of-type {
   background-color: #9711FE;
 }
 
-.buttons-container button:last-of-type {
+.buttons-container a:last-of-type {
   background-color: #D09BF9;
 }
 
