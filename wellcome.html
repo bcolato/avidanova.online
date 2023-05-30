@@ -54,7 +54,8 @@
         </a>
       </div>
 
-      <div class="green-card">
+      <div id="indique-e-ganhe" class="green-card">
+        <input id="indique-value" type="text" class="d-none" value="https://go.aff.7k-partners.com/m6vza9dx">
         <h2>Indique e ganhe R$10</h2>
         <span>
           Você ganha R$10 a cada indicação.</br>
@@ -71,5 +72,15 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const indique = document.querySelector('#indique-e-ganhe')
+    indique.addEventListener('click', () => {
+      const indiqueValue = document.querySelector('#indique-value');
+      indiqueValue.select();
+      indiqueValue.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(indiqueValue.value);
+    })
+  </script>
 </body>
 </html>
