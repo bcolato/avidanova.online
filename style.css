@@ -497,3 +497,10 @@ header div div span {
 .border-red {
   border: 2px solid red !important;
 }
+
+.go-back {
+  margin-top: 4rem;
+  font-size: 10px;
+  font-weight: 700;
+  color: #000000;
+}
