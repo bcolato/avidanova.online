@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="login">
+    <div class="limit">
+      <img src="./images/genesis-logo.png" alt="Genesis logo">
+      <h3 class="color-purple">Login</h3>
+      <span class="color-gray span">Coloque seu e-mail e senha para entrar</span>
+      <input id="email" type="text" class="input" placeholder="E-mail">
+      <input id="password" type="password" class="input" placeholder="Senha">
+      <label for="manter-conectado" class="color-gray">
+        <input id="manter-conectado" name="manter-conectado" type="checkbox">
+        Manter conectado
+      </label>
+      <button id="entrar" type="button" class="bg-purple">Entrar</button>
+      <span class="color-gray span">
+        Ganhe dinheiro de forma inteligente e descomplicada!
+      </span>
+      <span class="color-gray span mt-100px">
+        ⭐️⭐️⭐️⭐️⭐️ (4,8/5) 973</br>avaliações feitas por <span class="bold">usuários reais</span>
+      </span>
+    </div>
+  </div>
+
+  <script>
+    const entrar = document.querySelector('#entrar');
+
+    entrar.addEventListener('click', () => {
+      const emailRegex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/;
+      const email = document.querySelector('#email');
+      const senha = document.querySelector('#password');
+      
+      if (!emailRegex.test(email.value)) {
+
+        email.classList.add('border-red');
+        setTimeout(() => {
+          email.classList.remove('border-red');
+        }, 3000);
+
+        return false;
+      }
+
+      if (senha.value.length < 8) {
+        senha.classList.add('border-red');
+        setTimeout(() => {
+          senha.classList.remove('border-red');
+        }, 3000);
+        return false;
+      }
+
+      window.location.pathname = '/wellcome.html';
+    });
+  </script>
+</body>
+</html>

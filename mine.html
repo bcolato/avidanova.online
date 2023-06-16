@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Mine</title>
+</head>
+<body>
+  <img id="logo-genesis" src="./images/genesis-mini-logo.png" alt="Logo Genesis">
+  <div class="board-container">
+    <div class="container"></div>
+  </div>
+  <div class="loading-new-signal">
+    <img src="./images/loader.svg" alt="Spinner carregando">
+    <span>Buscando novo sinal...</span>
+  </div>
+  <div class="buttons-container buttons-to-play d-none">
+    <button type="button">Fazer aposta</button>
+    <button id="play-again" type="button">Gerar novo sinal</button>
+  </div>
+
+  <span class="atention">
+    Atenção: O <b>Aplicativo Genesis</b> só funciona</br>
+    na plataforma indicada!
+  </span>
+
+  <script>
+    let times = 30;
+    const boardContainer = document.querySelector('.board-container');
+    const loader = document.querySelector('.loading-new-signal');
+    const buttons = document.querySelector('.buttons-to-play');
+    const button = document.querySelector('#play-again');
+
+    const makeAleatoryNumber = () => `${(Math.floor(Math.random() * 5))}${(Math.floor(Math.random() * 5))}`;
+
+    const makeNewBoard = () => {
+      const container = document.querySelector('.container');
+      container.innerHTML = '';
+      const numbers = [];
+
+      for (let index = 0; index < 5; index += 1) {
+        let number = makeAleatoryNumber();
+
+        while (numbers.includes(number)) {
+          number = makeAleatoryNumber();
+        }
+
+        numbers.push(number);
+      }
+
+      for (let index = 0; index < 5; index += 1) {
+        let div = document.createElement('div');
+        div.classList = 'cubo-container';
+
+        for (let idx = 0; idx < 5; idx += 1) {
+          let cubo = document.createElement('div');
+          cubo.classList = 'cubo';
+
+          if (numbers.includes(`${index}${idx}`)) {
+            let star = document.createElement('span');
+            star.classList = 'star';
+            star.innerHTML = '&#9733';
+            cubo.classList.add('orange');
+            cubo.appendChild(star);
+          } else {
+            let ball = document.createElement('div');
+            ball.classList = 'ball'
+            cubo.classList.add('blue');
+            cubo.appendChild(ball);
+          }
+
+          div.appendChild(cubo);
+        }
+
+        container.appendChild(div);
+      }
+    }
+
+    const counter = () => {
+      setTimeout(() => {
+        if (times === 0) {
+          button.innerHTML = 'Gerar novo sinal';
+          button.disabled = false;
+          times = 30;
+        } else {
+          times -= 1;
+          button.innerHTML = `${times} segundos`;
+          countDown();
+        }
+      }, 1000);
+    }
+
+    const countDown = async () => {
+      if (times === 30) {
+        loader.classList.remove('d-none');
+        boardContainer.classList.add('d-none');
+        buttons.classList.add('d-none');
+        await setTimeout(() => {
+          loader.classList.add('d-none');
+          boardContainer.classList.remove('d-none');
+          buttons.classList.remove('d-none');
+          button.innerHTML = `${times} segundos`;
+          button.disabled = true;
+          makeNewBoard();
+          counter();
+        }, 5000)
+      } else {
+        counter();
+      }
+    }
+
+    button.addEventListener('click', countDown);
+    countDown();
+  </script>
+</body>
+</html>
